@@ -12,11 +12,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/")
+@app.get("/api")
 async def root():
     return {"message": "Hello World!"}
 
-@app.get("/status")
+@app.get("/api/status")
 async def status():
     def is_port_in_use(port: int) -> bool:
         import socket
