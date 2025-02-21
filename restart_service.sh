@@ -8,6 +8,10 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+echo "Installing new dependencies..."
+source /home/ec2-user/shadowsocks_status/.venv/bin/activate
+pip install -r requirements.txt --no-cache-dir
+
 echo "Restarting Gunicorn..."
 sudo systemctl restart gunicorn
 
